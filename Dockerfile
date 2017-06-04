@@ -7,7 +7,7 @@ MAINTAINER Jorge Morales <jmorales@redhat.com>
 # Install build tools on top of base image
 # Java jdk 8, Maven 3.3, Gradle 2.6
 RUN INSTALL_PKGS="tar unzip bc which lsof java-1.6.0-openjdk java-1.6.0-openjdk-devel" && \
-    yum install -y --enablerepo=centosplus $INSTALL_PKGS && \
+    yum install -y --enablerepo rhel-7-server-optional-rpms --enablerepo rhel-7-server-rpms $INSTALL_PKGS && \
     rpm -V $INSTALL_PKGS && \
     yum clean all -y && \
     mkdir -p /opt/openshift && \
